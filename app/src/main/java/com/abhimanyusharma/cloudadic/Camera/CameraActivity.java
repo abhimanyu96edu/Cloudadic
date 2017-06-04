@@ -113,7 +113,7 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback, 
         //Here, we chose internal storage
         FileOutputStream fos = null;
         try {
-            filePath = "/sdcard/test.jpg";
+            filePath = "/storage/test.jpg";
             fos = new FileOutputStream(
                     filePath);
             fos.write(data);
