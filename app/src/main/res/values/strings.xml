@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Cloudadic</string>
     <string name="title_activity_location_map">Map</string>
+    <string name="facebook_app_id">567234710330646</string>
+    <string name="fb_login_protocol_scheme">fb567234710330646</string>
 
 </resources>

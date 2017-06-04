@@ -10,7 +10,7 @@
     android:paddingBottom="10dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:paddingTop="10dp"
+    android:paddingTop="5dp"
     android:background="@drawable/gradient_weather">
 
     <LinearLayout
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="25dp">
 
             <TextView
                 android:id="@+id/dateTextView"
@@ -338,7 +338,11 @@
             </LinearLayout>
 
         </LinearLayout>
-
+<Button
+    android:id="@+id/refresh"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="REFRESH"/>
     </LinearLayout>
 
 </RelativeLayout>

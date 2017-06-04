@@ -9,7 +9,9 @@ import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +34,7 @@ public class WeatherActivity extends Activity {
     static TextView windTextView;
     static TextView sunriseTextView;
     static TextView sunsetTextView;
+    Button refresh;
     public static ProgressDialog dialog;
 
     @Override
@@ -51,6 +54,7 @@ public class WeatherActivity extends Activity {
         windTextView = (TextView) findViewById(R.id.windTextView);
         sunriseTextView = (TextView) findViewById(R.id.sunriseTextView);
         sunsetTextView = (TextView) findViewById(R.id.sunsetTextView);
+        refresh = (Button) findViewById(R.id.refresh);
 
 
         WeatherActivity.dialog = new ProgressDialog(this);
@@ -58,6 +62,13 @@ public class WeatherActivity extends Activity {
         dialog.setMessage("Loading...");
         dialog.show();
         refresh();
+
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refresh();
+            }
+        });
     }
 
     public void refresh() {
