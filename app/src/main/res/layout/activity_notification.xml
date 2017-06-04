@@ -5,17 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.abhimanyusharma.cloudadic.NotificationActivity">
+    android:background="@drawable/gradient1"
+    tools:context="com.abhimanyusharma.cloudadic.Notification.NotificationActivity">
 
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:hintTextAppearance="@color/white"
+        android:textColorHint="#ffffff">
 
         <EditText
             android:id="@+id/inputField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="Enter Notification Message" />
@@ -24,7 +28,10 @@
     <Button
         android:id="@+id/notify"
         android:layout_width="match_parent"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
+        android:foreground="@drawable/ripple"
+        android:background="@drawable/button"
         android:text="Set Notification" />
 
 </LinearLayout>

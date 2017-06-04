@@ -1,4 +1,4 @@
-package com.abhimanyusharma.cloudadic;
+package com.abhimanyusharma.cloudadic.Notification;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.abhimanyusharma.cloudadic.MainActivity;
+import com.abhimanyusharma.cloudadic.R;
+
 public class NotificationActivity extends AppCompatActivity {
 
     EditText inputField;
@@ -23,6 +26,7 @@ public class NotificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notification);
         inputField = (EditText) findViewById(R.id.inputField);
         launchNotif = (Button) findViewById(R.id.notify);
+        findViewById(R.id.notify).getBackground().setLevel(1);
         launchNotif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

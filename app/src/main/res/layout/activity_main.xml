@@ -4,85 +4,144 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     android:orientation="vertical"
     tools:context="com.abhimanyusharma.cloudadic.MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
+
         <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button"
+            android:elevation="@dimen/home_activity_button_elevation"
+            android:foreground="@drawable/ripple"
             android:text="Cloudadic Multi-Utility"
-            android:textStyle="bold"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_weight="1"
         android:orientation="horizontal">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/camera"
-            android:text="Camera"
-            android:layout_margin="10dp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/notification"
-            android:layout_margin="10dp"
-            android:text="Notification"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button"
+                android:elevation="@dimen/home_activity_button_elevation"
+                android:foreground="@drawable/ripple"
+                android:text="Weather"
+                android:textColor="@color/white" />
 
-        <Button
-            android:id="@+id/mydevice"
-            android:text="My Device"
-            android:layout_margin="10dp"
+
+            <Button
+                android:id="@+id/notification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button"
+                android:elevation="@dimen/home_activity_button_elevation"
+                android:foreground="@drawable/ripple"
+                android:text="Notification"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/mydevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button"
+                android:elevation="@dimen/home_activity_button_elevation"
+                android:foreground="@drawable/ripple"
+                android:text="My Device"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button"
+                android:elevation="@dimen/home_activity_button_elevation"
+                android:foreground="@drawable/ripple"
+                android:text="Location"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/camera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button"
+                android:elevation="@dimen/home_activity_button_elevation"
+                android:foreground="@drawable/ripple"
+                android:text="Camera"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/checkinternet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button"
+                android:elevation="@dimen/home_activity_button_elevation"
+                android:foreground="@drawable/ripple"
+                android:text="Check Internet"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayoutLogo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-        android:layout_weight="1"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/location"
-            android:text="Location"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/imageViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/cloudadic" />
 
-        <Button
-            android:id="@+id/weather"
-            android:text="Weather"
-            android:layout_margin="10dp"
+        <TextView
+            android:id="@+id/tagline"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/checkinternet"
-            android:text="Check Internet"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageViewTitle"
+            android:gravity="center"
+            android:text="Assignment by Abhimanyu Sharma"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
     </LinearLayout>
 
-
-</LinearLayout>
 </LinearLayout>
