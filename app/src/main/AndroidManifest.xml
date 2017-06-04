@@ -46,7 +46,8 @@
 
         <activity
             android:name=".Location.LocationMapActivity"
-            android:label="@string/title_activity_location_map"></activity>
+            android:label="@string/title_activity_location_map" />
+        <activity android:name=".FacebookActivity"></activity>
     </application>
 
 </manifest>
