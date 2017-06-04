@@ -4,24 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context="com.abhimanyusharma.cloudadic.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <Button
+            android:text="Cloudadic Multi-Utility"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/camera"
             android:text="Camera"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/notification"
+            android:layout_margin="10dp"
             android:text="Notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -29,6 +49,7 @@
         <Button
             android:id="@+id/mydevice"
             android:text="My Device"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -36,28 +57,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/location"
             android:text="Location"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/weather"
             android:text="Weather"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/checkinternet"
             android:text="Check Internet"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
 
+</LinearLayout>
 </LinearLayout>

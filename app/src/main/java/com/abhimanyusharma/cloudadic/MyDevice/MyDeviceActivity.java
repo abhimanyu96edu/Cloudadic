@@ -1,4 +1,4 @@
-package com.abhimanyusharma.cloudadic;
+package com.abhimanyusharma.cloudadic.MyDevice;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.abhimanyusharma.cloudadic.R;
 
 public class MyDeviceActivity extends AppCompatActivity{
     private String mReport = "Empty";

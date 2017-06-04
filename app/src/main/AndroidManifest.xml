@@ -31,8 +31,7 @@
         <activity android:name=".CameraActivity" />
         <activity android:name=".Weather.WeatherActivity" />
         <activity android:name=".NotificationActivity" />
-        <activity android:name=".MyDeviceActivity" />
-        <activity android:name=".CheckInternetActivity" />
+        <activity android:name=".MyDevice.MyDeviceActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -46,7 +45,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".LocationMapActivity"
+            android:name=".Location.LocationMapActivity"
             android:label="@string/title_activity_location_map"></activity>
     </application>
 
