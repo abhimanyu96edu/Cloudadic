@@ -10,6 +10,8 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -25,25 +27,13 @@ import java.security.NoSuchAlgorithmException;
 public class FacebookActivity extends AppCompatActivity {
     Button skip;
     CallbackManager callbackManager;
-    PackageInfo info;
+
+    AccessToken token;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facebook);
-
-
-        try {
-            info = getPackageManager().getPackageInfo("com.abhimanyusharma.cloudadic",PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-
-        } catch (NoSuchAlgorithmException e) {
-
-        }
 
         skip = (Button) findViewById(R.id.skip);
         skip.setOnClickListener(new View.OnClickListener() {
@@ -55,33 +45,43 @@ public class FacebookActivity extends AppCompatActivity {
             }
         });
 
-        callbackManager = CallbackManager.Factory.create();
+        token  = AccessToken.getCurrentAccessToken();
+        if(token == null) {
 
-        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                Intent i = new Intent(FacebookActivity.this, MainActivity.class);
-                startActivity(i);
-                finish();
-            }
 
-            @Override
-            public void onCancel() {
+            callbackManager = CallbackManager.Factory.create();
 
-                //RETRY SHOULD BE IMPLEMENTED HERE BUT FOR NOW LETS TAKE YOU TO MAIN ACTIVITY
-                Intent i = new Intent(FacebookActivity.this, MainActivity.class);
-                startActivity(i);
-                finish();
-            }
+            LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+                @Override
+                public void onSuccess(LoginResult loginResult) {
+                    Intent i = new Intent(FacebookActivity.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
 
-            @Override
-            public void onError(FacebookException exception) {
-                //ERROR HANDLING SHOULD BE IMPLEMENTED HERE BUT FOR NOW LETS TAKE YOU TO MAIN ACTIVITY
-                Intent i = new Intent(FacebookActivity.this, MainActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
+                @Override
+                public void onCancel() {
+
+                    //RETRY SHOULD BE IMPLEMENTED HERE BUT FOR NOW LETS TAKE YOU TO MAIN ACTIVITY
+                    Intent i = new Intent(FacebookActivity.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+
+                @Override
+                public void onError(FacebookException exception) {
+                    //ERROR HANDLING SHOULD BE IMPLEMENTED HERE BUT FOR NOW LETS TAKE YOU TO MAIN ACTIVITY
+                    Intent i = new Intent(FacebookActivity.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            });
+        }else
+        {
+            Intent i = new Intent(FacebookActivity.this, MainActivity.class);
+            startActivity(i);
+            finish();
+        }
     }
 
     @Override
